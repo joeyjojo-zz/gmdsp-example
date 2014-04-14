@@ -29,15 +29,3 @@ Ember.Route.extend({
         });
     }
 });
-/*
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT DISTINCT ?expenditureLine ?expenditureLabel ?amount
-WHERE {
-  ?s a <http://reference.data.gov.uk/def/payment#Payment> .
-  ?s <http://reference.data.gov.uk/def/payment#payee> <http://data.gmdsp.org.uk/id/manchester/payee/British-Gas-Business> .
-  ?s <http://reference.data.gov.uk/def/payment#expenditureLine> ?expenditureLine .
-  ?expenditureLine <http://reference.data.gov.uk/def/payment#netAmount> ?amount .
-  ?expenditureLine rdfs:label ?expenditureLabel
-}
-*/
