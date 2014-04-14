@@ -1,7 +1,7 @@
 export default
 Ember.Route.extend({
     model: function () {
-        
+
         var siteDomain = "data.gmdsp.org.uk"
         var query = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
             + "SELECT DISTINCT ?payee ?payeeLabel WHERE {"
@@ -19,7 +19,10 @@ Ember.Route.extend({
                 var nameArray = [];
 
                 for (var i=0; i<numOfResults;i++){
-                    nameArray.push(results[i]["payeeLabel"]["value"]);
+                    nameArray.push({
+                        id: results[i]["payee"]["value"],
+                        label: results[i]["payeeLabel"]["value"]
+                    });
                 }
                 resolve(nameArray);
             });
