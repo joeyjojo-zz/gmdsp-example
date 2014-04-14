@@ -1,5 +1,5 @@
 <ul>
 {{#each}}
-  <li>{{this.label}}</li>
+  <li>{{#link-to 'payee'}}{{this.label}}{{/link-to}}</li>
 {{/each}}
 </ul>
