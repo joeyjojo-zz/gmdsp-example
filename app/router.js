@@ -2,8 +2,7 @@
 var Router = Ember.Router.extend();
 
 Router.map(function(){
-    this.route("component-test");
-    this.route("helper-test");
+    this.resource('payee', { path: '/payee/:payee_id' });
 });
 
 export default Router;
