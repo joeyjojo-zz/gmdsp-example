@@ -21,6 +21,7 @@ Ember.Route.extend({
                 for (var i=0; i<numOfResults;i++){
                     nameArray.push({
                         id: results[i]["payee"]["value"].split("/").pop(),
+                        uri: results[i]["payee"]["value"],
                         label: results[i]["payeeLabel"]["value"]
                     });
                 }
