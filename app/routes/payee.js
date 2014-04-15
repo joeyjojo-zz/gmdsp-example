@@ -2,6 +2,7 @@ export default
 Ember.Route.extend({
     model: function () {
 
+        /*
         var siteDomain = "data.gmdsp.org.uk"
         var query = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
             + "SELECT DISTINCT ?expenditureLine ?expenditureLabel ?amount WHERE {"
@@ -20,7 +21,7 @@ Ember.Route.extend({
                 var resultArray = [];
 
                 for (var i=0; i<numOfResults;i++){
-                    nameArray.push({
+                    resultArray.push({
                         id: results[i]["expenditureLine"]["value"],
                         label: results[i]["expenditureLabel"]["value"],
                         amount: results[i]["amount"]["value"]
@@ -29,5 +30,6 @@ Ember.Route.extend({
                 resolve(resultArray);
             });
         });
+        */
     }
 });
