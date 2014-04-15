@@ -8,7 +8,7 @@ Ember.Route.extend({
             + "?s a <http://reference.data.gov.uk/def/payment#Payment> . "
             + "?s <http://reference.data.gov.uk/def/payment#payee> ?payee . "
             + "?payee rdfs:label ?payeeLabel"
-            + "} ORDER BY (?payeeLabel)";
+            + "} ORDER BY (?payeeLabel) LIMIT 20";
         var url = "http://" + siteDomain + "/sparql.json?query=";
         url += encodeURIComponent(query);
 
@@ -20,7 +20,7 @@ Ember.Route.extend({
 
                 for (var i=0; i<numOfResults;i++){
                     nameArray.push({
-                        id: results[i]["payee"]["value"],
+                        id: results[i]["payee"]["value"].split("/").pop(),
                         label: results[i]["payeeLabel"]["value"]
                     });
                 }
