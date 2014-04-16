@@ -20,7 +20,7 @@ Ember.Route.extend({
                         });
                     });
                 });
-            },
+            }()/*,
             transactions: function(){
                 "use strict";
 
@@ -37,10 +37,9 @@ Ember.Route.extend({
 
                 return new Ember.RSVP.Promise(function(resolve, reject) {
                     Ember.$.getJSON(url).then(function(data){
-                        var results = data["results"]["bindings"]
+                        var results = data["results"]["bindings"];
                         var numOfResults = results.length;
                         var resultArray = [];
-
                         for (var i=0; i<numOfResults;i++){
                             resultArray.push({
                                 id: results[i]["expenditureLine"]["value"],
@@ -51,7 +50,7 @@ Ember.Route.extend({
                         resolve(resultArray);
                     });
                 });
-            }
+            }*/
         });
 
     }
