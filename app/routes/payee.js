@@ -20,7 +20,7 @@ Ember.Route.extend({
                         });
                     });
                 });
-            }()/*,
+            }(),
             transactions: function(){
                 "use strict";
 
@@ -50,7 +50,7 @@ Ember.Route.extend({
                         resolve(resultArray);
                     });
                 });
-            }*/
+            }()
         });
 
     }
