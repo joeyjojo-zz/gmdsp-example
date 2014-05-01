@@ -48,6 +48,7 @@ module.exports = function (broccoli) {
       'appkit/**/*.js'
     ],
     legacyFilesToAppend: [
+      'numeral.js',
       'jquery.js',
       'handlebars.js',
       'ember.js',
