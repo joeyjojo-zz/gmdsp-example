@@ -52,6 +52,5 @@ Ember.Route.extend({
                 });
             }()
         });
-
     }
 });
