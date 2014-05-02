@@ -44,7 +44,7 @@ Ember.Route.extend({
                             resultArray.push({
                                 id: results[i]["expenditureLine"]["value"],
                                 label: results[i]["expenditureLabel"]["value"],
-                                amount: numeral().unformat(results[i]["amount"]["value"])
+                                amount: numeral(numeral().unformat(results[i]["amount"]["value"])).format('£0.00')
                             });
                         }
                         resolve(resultArray);
