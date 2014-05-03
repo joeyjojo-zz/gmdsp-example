@@ -1,4 +1,5 @@
 export default
+
 Ember.Route.extend({
     model: function (params) {
         return Ember.RSVP.hash({
@@ -23,7 +24,6 @@ Ember.Route.extend({
             }(),
             transactions: function(){
                 "use strict";
-
                 var siteDomain = "data.gmdsp.org.uk"
                 var query = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
                     + "SELECT DISTINCT ?expenditureLine ?expenditureLabel ?amount WHERE {"
@@ -44,7 +44,7 @@ Ember.Route.extend({
                             resultArray.push({
                                 id: results[i]["expenditureLine"]["value"],
                                 label: results[i]["expenditureLabel"]["value"],
-                                amount: results[i]["amount"]["value"]
+                                amount: numeral(numeral().unformat(results[i]["amount"]["value"])).format('£0.00')
                             });
                         }
                         resolve(resultArray);
@@ -52,6 +52,5 @@ Ember.Route.extend({
                 });
             }()
         });
-
     }
 });
